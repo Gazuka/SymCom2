@@ -1,0 +1,29 @@
+{% extends '/admin/base.html.twig' %}
+
+{% block title %}Lien - Add{% endblock %}
+
+{% block body %}
+   {{ form_start(form) }}
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-light">
+                    <h2>Informations obligatoires</h2>
+                    <hr/>
+                    {{ form_row(form.titre) }}                    
+                    {{ form_row(form.url) }} 
+                    <p>local / externe / fichier</p>
+                    {{ form_row(form.type) }} 
+                </div>
+            </div>            
+        </div>
+
+        <div class="alert alert-success clearfix">
+            <h2 class="alert-heading">Sauvegarder mon lien</h2>
+            <p>Vous êtes sur le point de sauvegarder votre lien, veuillez vérifier les informations !</p>
+            <button type="submit" class="btn btn-primary float-right">
+            <i class="fas fa-check"></i>
+            Ajouter le lien</button>
+        </div>
+
+        {{ form_end(form) }}        
+{% endblock %}

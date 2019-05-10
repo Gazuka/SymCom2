@@ -1,0 +1,38 @@
+{% extends '/admin/base.html.twig' %}
+
+{% block title %}Agenda - Add{% endblock %}
+
+{% block body %}
+   {{ form_start(form) }}
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-light">
+                    <h2>Informations obligatoires</h2>
+                    <hr/>
+                    {{ form_row(form.nom) }}                    
+                    {{ form_row(form.dateEvent) }} 
+                </div>
+                <div class="alert alert-light">
+                    <h2>Informations complémentaires</h2>
+                    <hr/>
+                    {{ form_row(form.lieu) }}                    
+                    {{ form_row(form.heureDebut) }} 
+                    {{ form_row(form.heureFin) }}
+                    {{ form_row(form.commentaire) }}
+                    {{ form_row(form.lien) }}
+                    {{ form_row(form.datePublication) }}
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="alert alert-success clearfix">
+            <h2 class="alert-heading">Sauvegarder mon événement</h2>
+            <p>Vous êtes sur le point de publier votre événement, veuillez vérifier les informations !</p>
+            <button type="submit" class="btn btn-primary float-right">
+            <i class="fas fa-check"></i>
+            Ajouter dans l'agenda</button>
+        </div>
+
+        {{ form_end(form) }}        
+{% endblock %}
